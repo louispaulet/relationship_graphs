@@ -1,13 +1,14 @@
 const filenames = [
-    "The_Office",
-    "Parcs_And_Recs",
-    "The_Lord_Of_The_Rings",
     "Back_To_The_Future",
     "Futurama",
-    "Shrek",
     "Harry_Potter",
+    "Parcs_And_Recs",
     "Sarkozy",
-]; 
+    "Shrek",
+    "The_Lord_Of_The_Rings",
+    "The_Matrix",
+    "The_Office"
+];
 
 // Fill the dropdown with the filenames
 const select = d3.select("#json-select");

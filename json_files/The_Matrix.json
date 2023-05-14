@@ -1,0 +1,20 @@
+ {
+  "nodes": [
+    { "id": "neo", "label": "Neo" },
+    { "id": "trinity", "label": "Trinity" },
+    { "id": "morpheus", "label": "Morpheus" },
+    { "id": "agent_smith", "label": "Agent Smith" },
+    { "id": "oracle", "label": "The Oracle" }
+  ],
+  "links": [
+    { "source": "neo", "target": "trinity", "label": "romantic partner" },
+    { "source": "neo", "target": "morpheus", "label": "mentor" },
+    { "source": "neo", "target": "agent_smith", "label": "enemy" },
+    { "source": "trinity", "target": "morpheus", "label": "ally" },
+    { "source": "trinity", "target": "agent_smith", "label": "enemy" },
+    { "source": "morpheus", "target": "agent_smith", "label": "enemy" },
+    { "source": "morpheus", "target": "oracle", "label": "ally" },
+    { "source": "neo", "target": "oracle", "label": "ally" },
+    { "source": "trinity", "target": "oracle", "label": "ally" }
+  ]
+}
