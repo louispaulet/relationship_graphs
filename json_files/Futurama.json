@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    { "id": "fry", "label": "Fry" },
+    { "id": "bender", "label": "Bender" },
+    { "id": "leela", "label": "Leela" },
+    { "id": "professor", "label": "Professor Farnsworth" },
+    { "id": "amy", "label": "Amy Wong" },
+    { "id": "hermes", "label": "Hermes Conrad" },
+    { "id": "zoidberg", "label": "Dr. Zoidberg" }
+  ],
+  "links": [
+    { "source": "fry", "target": "bender", "label": "friend" },
+    { "source": "fry", "target": "leela", "label": "colleague" },
+    { "source": "fry", "target": "professor", "label": "nephew" },
+    { "source": "fry", "target": "amy", "label": "colleague" },
+    { "source": "fry", "target": "hermes", "label": "colleague" },
+    { "source": "fry", "target": "zoidberg", "label": "colleague" },
+    { "source": "bender", "target": "leela", "label": "colleague" },
+    { "source": "bender", "target": "professor", "label": "employee" },
+    { "source": "bender", "target": "amy", "label": "colleague" },
+    { "source": "bender", "target": "hermes", "label": "colleague" },
+    { "source": "bender", "target": "zoidberg", "label": "colleague" },
+    { "source": "leela", "target": "professor", "label": "employee" },
+    { "source": "leela", "target": "amy", "label": "colleague" },
+    { "source": "leela", "target": "hermes", "label": "colleague" },
+    { "source": "leela", "target": "zoidberg", "label": "colleague" },
+    { "source": "professor", "target": "amy", "label": "employee" },
+    { "source": "professor", "target": "hermes", "label": "employee" },
+    { "source": "professor", "target": "zoidberg", "label": "employee" },
+    { "source": "amy", "target": "hermes", "label": "colleague" },
+    { "source": "amy", "target": "zoidberg", "label": "colleague" },
+    { "source": "hermes", "target": "zoidberg", "label": "colleague" }
+  ]
+}

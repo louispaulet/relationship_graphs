@@ -1,0 +1,28 @@
+{
+  "links": [
+    { "source": "marty", "target": "doc", "label": "friend" },
+    { "source": "marty", "target": "george", "label": "son" },
+    { "source": "marty", "target": "lorraine", "label": "son" },
+    { "source": "marty", "target": "jennifer", "label": "romantic partner" },
+    { "source": "marty", "target": "biff", "label": "enemy" },
+    { "source": "doc", "target": "einstein", "label": "pet" },
+    { "source": "doc", "target": "clara", "label": "romantic partner" },
+    { "source": "george", "target": "lorraine", "label": "husband" },
+    { "source": "george", "target": "biff", "label": "enemy" },
+    { "source": "lorraine", "target": "biff", "label": "unwanted suitor" },
+    { "source": "biff", "target": "griff", "label": "grandfather" },
+    { "source": "biff", "target": "buford", "label": "ancestor" }
+  ],
+  "nodes": [
+    { "id": "marty", "label": "Marty McFly" },
+    { "id": "doc", "label": "Doc Brown" },
+    { "id": "george", "label": "George McFly" },
+    { "id": "lorraine", "label": "Lorraine Baines" },
+    { "id": "jennifer", "label": "Jennifer Parker" },
+    { "id": "biff", "label": "Biff Tannen" },
+    { "id": "einstein", "label": "Einstein" },
+    { "id": "clara", "label": "Clara Clayton" },
+    { "id": "griff", "label": "Griff Tannen" },
+    { "id": "buford", "label": "Buford Tannen" }
+  ]
+}

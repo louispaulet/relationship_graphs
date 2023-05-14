@@ -1,0 +1,20 @@
+ {
+  "nodes": [
+    { "id": "shrek", "label": "Shrek" },
+    { "id": "donkey", "label": "Donkey" },
+    { "id": "fiona", "label": "Princess Fiona" },
+    { "id": "farquaad", "label": "Lord Farquaad" },
+    { "id": "dragon", "label": "Dragon" }
+  ],
+  "links": [
+    { "source": "shrek", "target": "donkey", "label": "friend" },
+    { "source": "shrek", "target": "fiona", "label": "romantic partner" },
+    { "source": "shrek", "target": "farquaad", "label": "enemy" },
+    { "source": "donkey", "target": "dragon", "label": "romantic partner" },
+    { "source": "donkey", "target": "fiona", "label": "friend" },
+    { "source": "fiona", "target": "farquaad", "label": "forced betrothed" },
+    { "source": "fiona", "target": "dragon", "label": "captor" },
+    { "source": "farquaad", "target": "fiona", "label": "forced betrothed" },
+    { "source": "farquaad", "target": "shrek", "label": "enemy" }
+  ]
+}

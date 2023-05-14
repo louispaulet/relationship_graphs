@@ -1,9 +1,12 @@
 const filenames = [
-    "relationships.json",
-    "sarkozy.json",
-    "parcs_and_recs.json",
-    "lotr.json",
-    "harry_potter.json"
+    "The_Office",
+    "Parcs_And_Recs",
+    "The_Lord_Of_The_Rings",
+    "Back_To_The_Future",
+    "Futurama",
+    "Shrek",
+    "Harry_Potter",
+    "Sarkozy",
 ]; 
 
 // Fill the dropdown with the filenames
@@ -19,7 +22,7 @@ loadData(); // Load initial data
 function loadData() {
   const filename = select.node().value;
 
-  d3.json("json_files/"+filename).then(data => {
+  d3.json("json_files/"+filename+".json").then(data => {
     // Clear the previous graph
     d3.select("#graph").html("");
   const width = 800;
