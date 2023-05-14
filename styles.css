@@ -1,0 +1,19 @@
+#graph {
+  height: 600px;
+}
+
+.node {
+  fill: #1e88e5;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.text {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+}
