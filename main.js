@@ -1,4 +1,27 @@
-d3.json("relationships.json").then(data => {
+const filenames = [
+    "relationships.json",
+    "sarkozy.json",
+    "parcs_and_recs.json",
+    "lotr.json",
+    "harry_potter.json"
+]; 
+
+// Fill the dropdown with the filenames
+const select = d3.select("#json-select");
+filenames.forEach(filename => {
+  select.append("option").text(filename);
+});
+
+// Load data when a new option is selected
+select.on("change", loadData);
+loadData(); // Load initial data
+
+function loadData() {
+  const filename = select.node().value;
+
+  d3.json(filename).then(data => {
+    // Clear the previous graph
+    d3.select("#graph").html("");
   const width = 800;
   const height = 600;
 
@@ -86,3 +109,5 @@ d3.json("relationships.json").then(data => {
     event.subject.fy = null;
   }
 });
+ 
+}

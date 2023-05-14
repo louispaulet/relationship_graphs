@@ -1,0 +1,22 @@
+{
+  "links": [
+    { "source": "nicolas", "target": "cecilia", "label": "ex-spouse" },
+    { "source": "nicolas", "target": "carla", "label": "spouse" },
+    { "source": "nicolas", "target": "pierre", "label": "son" },
+    { "source": "nicolas", "target": "jean", "label": "son" },
+    { "source": "nicolas", "target": "louis", "label": "son" },
+    { "source": "nicolas", "target": "giulia", "label": "daughter" },
+    { "source": "cecilia", "target": "pierre", "label": "son" },
+    { "source": "cecilia", "target": "jean", "label": "son" },
+    { "source": "carla", "target": "giulia", "label": "daughter" }
+  ],
+  "nodes": [
+    { "id": "nicolas", "label": "Nicolas Sarkozy" },
+    { "id": "cecilia", "label": "Cecilia Sarkozy" },
+    { "id": "carla", "label": "Carla Bruni" },
+    { "id": "pierre", "label": "Pierre Sarkozy" },
+    { "id": "jean", "label": "Jean Sarkozy" },
+    { "id": "louis", "label": "Louis Sarkozy" },
+    { "id": "giulia", "label": "Giulia Sarkozy" }
+  ]
+}

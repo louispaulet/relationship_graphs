@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    { "id": "leslie", "label": "Leslie Knope" },
+    { "id": "ann", "label": "Ann Perkins" },
+    { "id": "ron", "label": "Ron Swanson" },
+    { "id": "tom", "label": "Tom Haverford" },
+    { "id": "april", "label": "April Ludgate" },
+    { "id": "andy", "label": "Andy Dwyer" },
+    { "id": "ben", "label": "Ben Wyatt" },
+    { "id": "jerry", "label": "Jerry Gergich" },
+    { "id": "donna", "label": "Donna Meagle" },
+    { "id": "chris", "label": "Chris Traeger" },
+    { "id": "mark", "label": "Mark Brendanawicz" }
+  ],
+  "links": [
+    { "source": "leslie", "target": "ann", "label": "best friend" },
+    { "source": "leslie", "target": "ron", "label": "boss" },
+    { "source": "leslie", "target": "tom", "label": "subordinate" },
+    { "source": "leslie", "target": "april", "label": "subordinate" },
+    { "source": "leslie", "target": "andy", "label": "friend" },
+    { "source": "leslie", "target": "ben", "label": "romantic partner" },
+    { "source": "leslie", "target": "jerry", "label": "subordinate" },
+    { "source": "leslie", "target": "donna", "label": "subordinate" },
+    { "source": "leslie", "target": "chris", "label": "boss" },
+    { "source": "leslie", "target": "mark", "label": "colleague" },
+    { "source": "ann", "target": "leslie", "label": "best friend" },
+    { "source": "ann", "target": "chris", "label": "romantic partner" },
+    { "source": "ron", "target": "leslie", "label": "subordinate" },
+    { "source": "tom", "target": "leslie", "label": "boss" },
+    { "source": "april", "target": "leslie", "label": "boss" },
+    { "source": "april", "target": "andy", "label": "romantic partner" },
+    { "source": "andy", "target": "april", "label": "romantic partner" },
+    { "source": "ben", "target": "leslie", "label": "romantic partner" },
+    { "source": "jerry", "target": "leslie", "label": "boss" },
+    { "source": "donna", "target": "leslie", "label": "boss" },
+    { "source": "chris", "target": "leslie", "label": "subordinate" },
+    { "source": "mark", "target": "leslie", "label": "colleague" }
+  ]
+}
