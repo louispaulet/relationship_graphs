@@ -19,7 +19,7 @@ loadData(); // Load initial data
 function loadData() {
   const filename = select.node().value;
 
-  d3.json(filename).then(data => {
+  d3.json("json_files/"+filename).then(data => {
     // Clear the previous graph
     d3.select("#graph").html("");
   const width = 800;
