@@ -1,6 +1,15 @@
 #graph {
   height: 600px;
+  display: auto;
+  margin: auto;
 }
+
+svg {
+  display: block;
+  margin: auto;
+  border: 5px solid black;
+}
+
 
 .node {
   fill: #1e88e5;

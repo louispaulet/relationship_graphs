@@ -13,6 +13,14 @@ d3.json("relationships.json").then(data => {
     .data(data.links)
     .join("line")
     .attr("class", "link");
+    
+  const linkLabel = svg.append("g")
+  .attr("class", "link-labels")
+  .selectAll("text")
+  .data(data.links)
+  .join("text")
+  .attr("class", "link-label")
+  .text(d => d.label);
 
   const node = svg.append("g")
     .attr("class", "nodes")
@@ -20,7 +28,7 @@ d3.json("relationships.json").then(data => {
     .data(data.nodes)
     .join("circle")
     .attr("class", "node")
-    .attr("r", 10);
+    .attr("r", 20);
 
   const label = svg.append("g")
     .attr("class", "labels")
@@ -31,9 +39,10 @@ d3.json("relationships.json").then(data => {
     .text(d => d.label);
 
   const simulation = d3.forceSimulation(data.nodes)
-    .force("link", d3.forceLink(data.links).id(d => d.id))
+    .force("link", d3.forceLink(data.links).id(d => d.id).distance(250))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
+
 
   simulation.on("tick", () => {
     link
@@ -49,6 +58,10 @@ d3.json("relationships.json").then(data => {
     label
       .attr("x", d => d.x)
       .attr("y", d => d.y);
+      
+    linkLabel
+    .attr("x", d => (d.source.x + d.target.x) / 2)
+    .attr("y", d => (d.source.y + d.target.y) / 2);
   });
 
   node.call(d3.drag()
