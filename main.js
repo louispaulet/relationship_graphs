@@ -123,18 +123,13 @@ function loadData() {
  
 }
 
-document.getElementById('download-btn').addEventListener('click', function() {
-  const filename = select.node().value;
-  const svgElement = document.querySelector('svg'); // Get the original SVG element
-
-  // Create a new SVG element with the specified dimensions
+function createNewSVGWithBackground(svgElement) {
   const svgWithBackground = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svgWithBackground.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svgWithBackground.setAttribute('version', '1.1');
   svgWithBackground.setAttribute('width', '800');
   svgWithBackground.setAttribute('height', '600');
 
-  // Add a white background rectangle to the new SVG
   const backgroundRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
   backgroundRect.setAttribute('x', '0');
   backgroundRect.setAttribute('y', '0');
@@ -143,64 +138,61 @@ document.getElementById('download-btn').addEventListener('click', function() {
   backgroundRect.setAttribute('fill', 'white');
   svgWithBackground.appendChild(backgroundRect);
 
-  // Append the original SVG as a child of the new SVG
   const clonedSvg = svgElement.cloneNode(true);
   svgWithBackground.appendChild(clonedSvg);
 
-  // Get the computed style of every SVG element
-  const elements = svgWithBackground.querySelectorAll('*');
-  for (let i = 0; i < elements.length; i++) {
-    const cStyle = getComputedStyle(elements[i]);
-    for (let j = 0; j < cStyle.length; j++) {
-      elements[i].style[cStyle[j]] = cStyle[cStyle[j]];
-    }
-  }
+  return svgWithBackground;
+}
 
-  // Update node elements to light gray
+function updateNodeElements(svgWithBackground) {
   const nodeElements = svgWithBackground.querySelectorAll('.node');
   for (let i = 0; i < nodeElements.length; i++) {
     nodeElements[i].setAttribute('fill', 'lightgray');
   }
+}
 
-  // Update link elements to pink
+function updateLinkElements(svgWithBackground) {
   const linkElements = svgWithBackground.querySelectorAll('.link');
   for (let i = 0; i < linkElements.length; i++) {
     linkElements[i].setAttribute('stroke', 'pink');
   }
+}
 
-  // Update link label elements to red
+function updateLinkLabelElements(svgWithBackground) {
   const linkLabelElements = svgWithBackground.querySelectorAll('.link-label');
   for (let i = 0; i < linkLabelElements.length; i++) {
     linkLabelElements[i].setAttribute('fill', 'red');
   }
+}
 
-  // Create a new canvas element
+document.getElementById('download-btn').addEventListener('click', function() {
+  const filename = select.node().value;
+  const svgElement = document.querySelector('svg');
+
+  const svgWithBackground = createNewSVGWithBackground(svgElement);
+  updateNodeElements(svgWithBackground);
+  updateLinkElements(svgWithBackground);
+  updateLinkLabelElements(svgWithBackground);
+
   const canvas = document.createElement('canvas');
   canvas.id = 'tempCanvas';
   document.body.appendChild(canvas);
 
-  // Use canvg to render the SVG on the canvas
   canvg('tempCanvas', new XMLSerializer().serializeToString(svgWithBackground));
 
-  // Create a new download link
   const downloadLink = document.createElement('a');
   const timestamp = new Date().toISOString().replace(/:/g, '-');
   downloadLink.download = `${timestamp}_${filename}.png`;
 
-  // Convert the canvas to a Blob and trigger the download
-  canvas.toBlob(function (blob) {
+  canvas.toBlob(function(blob) {
     downloadLink.href = URL.createObjectURL(blob);
-
-    // Trigger the download
     document.body.appendChild(downloadLink);
     downloadLink.click();
 
-    // Clean up
     document.body.removeChild(downloadLink);
     document.body.removeChild(canvas);
   }, 'image/png');
 });
-
 
 
 
