@@ -156,9 +156,27 @@ document.getElementById('download-btn').addEventListener('click', function() {
     }
   }
 
+  // Update node elements to light gray
+  const nodeElements = svgWithBackground.querySelectorAll('.node');
+  for (let i = 0; i < nodeElements.length; i++) {
+    nodeElements[i].setAttribute('fill', 'lightgray');
+  }
+
+  // Update link elements to pink
+  const linkElements = svgWithBackground.querySelectorAll('.link');
+  for (let i = 0; i < linkElements.length; i++) {
+    linkElements[i].setAttribute('stroke', 'pink');
+  }
+
+  // Update link label elements to red
+  const linkLabelElements = svgWithBackground.querySelectorAll('.link-label');
+  for (let i = 0; i < linkLabelElements.length; i++) {
+    linkLabelElements[i].setAttribute('fill', 'red');
+  }
+
   // Create a new canvas element
   const canvas = document.createElement('canvas');
-  canvas.id = "tempCanvas";
+  canvas.id = 'tempCanvas';
   document.body.appendChild(canvas);
 
   // Use canvg to render the SVG on the canvas
@@ -170,7 +188,7 @@ document.getElementById('download-btn').addEventListener('click', function() {
   downloadLink.download = `${timestamp}_${filename}.png`;
 
   // Convert the canvas to a Blob and trigger the download
-  canvas.toBlob(function(blob) {
+  canvas.toBlob(function (blob) {
     downloadLink.href = URL.createObjectURL(blob);
 
     // Trigger the download
@@ -182,6 +200,7 @@ document.getElementById('download-btn').addEventListener('click', function() {
     document.body.removeChild(canvas);
   }, 'image/png');
 });
+
 
 
 
