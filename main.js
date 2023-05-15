@@ -1,16 +1,19 @@
 const filenames = [
   "Airplane",
   "Back_To_The_Future",
-  "Donald_Trump",
-  "Francois_Hollande",
   "Futurama",
   "Harry_Potter",
+  "Lego_Movie",
   "Parcs_And_Recs",
-  "Sarkozy",
   "Shrek",
   "The_Lord_Of_The_Rings",
   "The_Matrix",
-  "The_Office"
+  "The_Office",
+  
+  "Affaire_Tapie_Credit_Lyonnais",
+  "Donald_Trump",
+  "Francois_Hollande",
+  "Sarkozy",
 ];
 
 // Fill the dropdown with the filenames

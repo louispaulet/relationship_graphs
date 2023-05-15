@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    { "id": "emmet", "label": "Emmet Brickowski" },
+    { "id": "wyldstyle", "label": "Wyldstyle/Lucy" },
+    { "id": "vitruvius", "label": "Vitruvius" },
+    { "id": "lord_business", "label": "Lord Business/President Business" },
+    { "id": "batman", "label": "Batman" },
+    { "id": "unikitty", "label": "Unikitty" },
+    { "id": "benny", "label": "Benny" },
+    { "id": "metalbeard", "label": "MetalBeard" }
+  ],
+  "links": [
+    { "source": "emmet", "target": "wyldstyle", "label": "romantic partner" },
+    { "source": "emmet", "target": "vitruvius", "label": "mentor" },
+    { "source": "emmet", "target": "lord_business", "label": "enemy" },
+    { "source": "wyldstyle", "target": "vitruvius", "label": "ally" },
+    { "source": "wyldstyle", "target": "lord_business", "label": "enemy" },
+    { "source": "wyldstyle", "target": "batman", "label": "ex-romantic partner" },
+    { "source": "vitruvius", "target": "lord_business", "label": "enemy" },
+    { "source": "emmet", "target": "batman", "label": "ally" },
+    { "source": "emmet", "target": "unikitty", "label": "ally" },
+    { "source": "emmet", "target": "benny", "label": "ally" },
+    { "source": "emmet", "target": "metalbeard", "label": "ally" },
+    { "source": "wyldstyle", "target": "unikitty", "label": "ally" },
+    { "source": "wyldstyle", "target": "benny", "label": "ally" },
+    { "source": "wyldstyle", "target": "metalbeard", "label": "ally" },
+    { "source": "batman", "target": "lord_business", "label": "enemy" },
+    { "source": "unikitty", "target": "lord_business", "label": "enemy" },
+    { "source": "benny", "target": "lord_business", "label": "enemy" },
+    { "source": "metalbeard", "target": "lord_business", "label": "enemy" }
+  ]
+}
