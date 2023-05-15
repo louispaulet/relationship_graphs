@@ -26,6 +26,9 @@ loadData(); // Load initial data
 
 function loadData() {
   const filename = select.node().value;
+  
+  // Get the current value of the slider
+  const linkDistance = document.getElementById('link-distance').value;
 
   d3.json("json_files/"+filename+".json").then(data => {
     // Clear the previous graph
@@ -70,7 +73,7 @@ function loadData() {
     .text(d => d.label);
 
   const simulation = d3.forceSimulation(data.nodes)
-    .force("link", d3.forceLink(data.links).id(d => d.id).distance(250))
+    .force("link", d3.forceLink(data.links).id(d => d.id).distance(linkDistance))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -119,3 +122,7 @@ function loadData() {
 });
  
 }
+
+
+// Add this at the end of your main.js file
+document.getElementById('link-distance').addEventListener('input', loadData);
