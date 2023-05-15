@@ -26,3 +26,13 @@ svg {
   font-family: "Roboto", sans-serif;
   font-size: 10px;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+}

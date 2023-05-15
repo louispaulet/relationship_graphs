@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About - Character Relationships</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Character Relationships</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="mt-5 mb-5 text-center">About</h1>
+    
+    <p>
+  <strong>Relationship Graphs</strong> is an exciting exploration into the world of character relationships. Whether they are real or fictional characters, understanding the web of relationships between them can provide deep insights into their stories and behaviors. This project aims to visualize those relationships using interactive graphs.
+</p>
+<p>
+  The project started with a conversation with ChatGPT, a language model developed by OpenAI. The aim was to generate relationship JSON files that map the relationships between various real or fictional characters. For example, you might have a JSON file for the relationships between the characters in the "Lord of the Rings" series. The next step was to create a Jupyter notebook that uses networkx and matplotlib to visualize these relationships as graphs. This provided a proof of concept for the project.
+</p>
+<p>
+  To make the graphs more interactive and accessible, a simple website was created using D3.js. This website allows users to explore the relationships in a more hands-on way. To extend the functionality of the website, support for multiple JSON files was added. This means you can visualize multiple different relationship graphs, depending on which JSON file you choose to load.
+</p>
+
+<p>
+  There are endless possibilities for extending this project. You could generate more complex relationship JSON files, improve the interactivity of the website, or even integrate it with a database to store and manage your relationship data. The sky's the limit! Contributions are welcome. Feel free to submit a pull request with your improvements or open an issue if you find a bug or want to suggest a new feature.
+</p>
+<p>
+  Thanks for checking out Relationship Graphs! Enjoy exploring the complex web of relationships between your favorite characters!
+</p>
+
+    
+  </div>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+      <span class="text-muted">Copyright © 2023 character-relationships.thefrenchartist.dev/</span>
+    </div>
+  </footer>
+
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
