@@ -127,29 +127,45 @@ function createNewSVGWithBackground(svgElement) {
   const svgWithBackground = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svgWithBackground.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svgWithBackground.setAttribute('version', '1.1');
-  svgWithBackground.setAttribute('width', '800');
-  svgWithBackground.setAttribute('height', '600');
+  
+  const clonedSvg = svgElement.cloneNode(true);
+  clonedSvg.removeAttribute('transform');
+  clonedSvg.setAttribute('transform', 'scale(4)');
+  
+  const clonedSvgWidth = clonedSvg.getBBox().width;
+  const clonedSvgHeight = clonedSvg.getBBox().height;
+  
+  svgWithBackground.setAttribute('width', clonedSvgWidth);
+  svgWithBackground.setAttribute('height', clonedSvgHeight);
 
   const backgroundRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
   backgroundRect.setAttribute('x', '0');
   backgroundRect.setAttribute('y', '0');
-  backgroundRect.setAttribute('width', '100%');
-  backgroundRect.setAttribute('height', '100%');
+  backgroundRect.setAttribute('width', clonedSvgWidth);
+  backgroundRect.setAttribute('height', clonedSvgHeight);
   backgroundRect.setAttribute('fill', 'white');
   svgWithBackground.appendChild(backgroundRect);
+  
+  console.log(clonedSvgWidth)
 
-  const clonedSvg = svgElement.cloneNode(true);
   svgWithBackground.appendChild(clonedSvg);
 
   return svgWithBackground;
 }
+
 
 function updateNodeElements(svgWithBackground) {
   const nodeElements = svgWithBackground.querySelectorAll('.node');
   for (let i = 0; i < nodeElements.length; i++) {
     nodeElements[i].setAttribute('fill', 'lightgray');
   }
+  
+  const labelElements = svgWithBackground.querySelectorAll('.label');
+  for (let i = 0; i < labelElements.length; i++) {
+    labelElements[i].setAttribute('fill', 'blue');
+  }
 }
+
 
 function updateLinkElements(svgWithBackground) {
   const linkElements = svgWithBackground.querySelectorAll('.link');
@@ -175,10 +191,20 @@ document.getElementById('download-btn').addEventListener('click', function() {
   updateLinkLabelElements(svgWithBackground);
 
   const canvas = document.createElement('canvas');
-  canvas.id = 'tempCanvas';
-  document.body.appendChild(canvas);
+  canvas.width = 3200;
+  canvas.height = 2400;
+  const ctx = canvas.getContext('2d');
 
-  canvg('tempCanvas', new XMLSerializer().serializeToString(svgWithBackground));
+  // Set white background color
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  const svgString = new XMLSerializer().serializeToString(svgWithBackground);
+
+  canvg(canvas, svgString, {
+    ignoreDimensions: true,
+    ignoreClear: true, // Preserve white background
+  });
 
   const downloadLink = document.createElement('a');
   const timestamp = new Date().toISOString().replace(/:/g, '-');
@@ -193,6 +219,7 @@ document.getElementById('download-btn').addEventListener('click', function() {
     document.body.removeChild(canvas);
   }, 'image/png');
 });
+
 
 
 
