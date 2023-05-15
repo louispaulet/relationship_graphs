@@ -12,6 +12,8 @@ This project is an exciting exploration into the world of character relationship
 
 4. **Multiple JSON Files Support:** To extend the functionality of the website, support for multiple JSON files was added. This means you can visualize multiple different relationship graphs, depending on which JSON file you choose to load.
 
+5. **Download Graph as PNG:** A feature to download the current graph as a PNG image file was added. Users can now save their explorations and share them with others.
+
 ## Getting Started 🚀
 
 To get started with this project, clone the repository and run the `GPT4_Relationship_Graphs.ipynb` notebook. This will generate a relationship graph using the provided JSON file.
