@@ -123,5 +123,66 @@ function loadData() {
  
 }
 
+document.getElementById('download-btn').addEventListener('click', function() {
+  const filename = select.node().value;
+  const svgElement = document.querySelector('svg'); // Get the original SVG element
+
+  // Create a new SVG element with the specified dimensions
+  const svgWithBackground = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svgWithBackground.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  svgWithBackground.setAttribute('version', '1.1');
+  svgWithBackground.setAttribute('width', '800');
+  svgWithBackground.setAttribute('height', '600');
+
+  // Add a white background rectangle to the new SVG
+  const backgroundRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  backgroundRect.setAttribute('x', '0');
+  backgroundRect.setAttribute('y', '0');
+  backgroundRect.setAttribute('width', '100%');
+  backgroundRect.setAttribute('height', '100%');
+  backgroundRect.setAttribute('fill', 'white');
+  svgWithBackground.appendChild(backgroundRect);
+
+  // Append the original SVG as a child of the new SVG
+  const clonedSvg = svgElement.cloneNode(true);
+  svgWithBackground.appendChild(clonedSvg);
+
+  // Get the computed style of every SVG element
+  const elements = svgWithBackground.querySelectorAll('*');
+  for (let i = 0; i < elements.length; i++) {
+    const cStyle = getComputedStyle(elements[i]);
+    for (let j = 0; j < cStyle.length; j++) {
+      elements[i].style[cStyle[j]] = cStyle[cStyle[j]];
+    }
+  }
+
+  // Create a new canvas element
+  const canvas = document.createElement('canvas');
+  canvas.id = "tempCanvas";
+  document.body.appendChild(canvas);
+
+  // Use canvg to render the SVG on the canvas
+  canvg('tempCanvas', new XMLSerializer().serializeToString(svgWithBackground));
+
+  // Create a new download link
+  const downloadLink = document.createElement('a');
+  const timestamp = new Date().toISOString().replace(/:/g, '-');
+  downloadLink.download = `${timestamp}_${filename}.png`;
+
+  // Convert the canvas to a Blob and trigger the download
+  canvas.toBlob(function(blob) {
+    downloadLink.href = URL.createObjectURL(blob);
+
+    // Trigger the download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+
+    // Clean up
+    document.body.removeChild(downloadLink);
+    document.body.removeChild(canvas);
+  }, 'image/png');
+});
+
+
 
 document.getElementById('link-distance').addEventListener('change', loadData);
