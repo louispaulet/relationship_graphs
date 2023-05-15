@@ -1,0 +1,25 @@
+{
+  "links": [
+    { "source": "francois", "target": "sego", "label": "ex-partner" },
+    { "source": "francois", "target": "valerie", "label": "ex-partner" },
+    { "source": "francois", "target": "julie", "label": "partner" },
+    { "source": "francois", "target": "thomas", "label": "son" },
+    { "source": "francois", "target": "clement", "label": "son" },
+    { "source": "francois", "target": "julien", "label": "son" },
+    { "source": "francois", "target": "flora", "label": "daughter" },
+    { "source": "sego", "target": "thomas", "label": "son" },
+    { "source": "sego", "target": "clement", "label": "son" },
+    { "source": "sego", "target": "julien", "label": "son" },
+    { "source": "sego", "target": "flora", "label": "daughter" }
+  ],
+  "nodes": [
+    { "id": "francois", "label": "François Hollande" },
+    { "id": "sego", "label": "Ségolène Royal" },
+    { "id": "valerie", "label": "Valérie Trierweiler" },
+    { "id": "julie", "label": "Julie Gayet" },
+    { "id": "thomas", "label": "Thomas Hollande" },
+    { "id": "clement", "label": "Clément Hollande" },
+    { "id": "julien", "label": "Julien Hollande" },
+    { "id": "flora", "label": "Flora Hollande" }
+  ]
+}

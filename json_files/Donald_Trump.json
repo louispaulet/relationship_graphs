@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    { "id": "donald", "label": "Donald Trump" },
+    { "id": "ivana", "label": "Ivana Trump" },
+    { "id": "marla", "label": "Marla Maples" },
+    { "id": "melania", "label": "Melania Trump" },
+    { "id": "don_jr", "label": "Donald Trump Jr." },
+    { "id": "ivanka", "label": "Ivanka Trump" },
+    { "id": "eric", "label": "Eric Trump" },
+    { "id": "tiffany", "label": "Tiffany Trump" },
+    { "id": "barron", "label": "Barron Trump" }
+  ],
+  "links": [
+    { "source": "donald", "target": "ivana", "label": "ex-spouse" },
+    { "source": "donald", "target": "marla", "label": "ex-spouse" },
+    { "source": "donald", "target": "melania", "label": "spouse" },
+    { "source": "donald", "target": "don_jr", "label": "son" },
+    { "source": "donald", "target": "ivanka", "label": "daughter" },
+    { "source": "donald", "target": "eric", "label": "son" },
+    { "source": "donald", "target": "tiffany", "label": "daughter" },
+    { "source": "donald", "target": "barron", "label": "son" },
+    { "source": "ivana", "target": "don_jr", "label": "son" },
+    { "source": "ivana", "target": "ivanka", "label": "daughter" },
+    { "source": "ivana", "target": "eric", "label": "son" },
+    { "source": "marla", "target": "tiffany", "label": "daughter" },
+    { "source": "melania", "target": "barron", "label": "son" }
+  ]
+}

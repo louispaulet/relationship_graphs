@@ -1,0 +1,26 @@
+{
+  "nodes": [
+    { "id": "ted", "label": "Ted Striker" },
+    { "id": "elaine", "label": "Elaine Dickinson" },
+    { "id": "rumack", "label": "Dr. Rumack" },
+    { "id": "roger", "label": "Roger Murdock" },
+    { "id": "oever", "label": "Captain Clarence Oveur" },
+    { "id": "mccroskey", "label": "Steve McCroskey" }
+  ],
+  "links": [
+    { "source": "ted", "target": "elaine", "label": "romantic interest" },
+    { "source": "ted", "target": "rumack", "label": "acquaintance" },
+    { "source": "ted", "target": "roger", "label": "acquaintance" },
+    { "source": "ted", "target": "oever", "label": "acquaintance" },
+    { "source": "ted", "target": "mccroskey", "label": "acquaintance" },
+    { "source": "elaine", "target": "rumack", "label": "colleague" },
+    { "source": "elaine", "target": "roger", "label": "colleague" },
+    { "source": "elaine", "target": "oever", "label": "colleague" },
+    { "source": "rumack", "target": "roger", "label": "colleague" },
+    { "source": "rumack", "target": "oever", "label": "colleague" },
+    { "source": "rumack", "target": "mccroskey", "label": "colleague" },
+    { "source": "roger", "target": "oever", "label": "colleague" },
+    { "source": "roger", "target": "mccroskey", "label": "colleague" },
+    { "source": "oever", "target": "mccroskey", "label": "colleague" }
+  ]
+}
