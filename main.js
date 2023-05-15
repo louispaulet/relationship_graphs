@@ -124,5 +124,4 @@ function loadData() {
 }
 
 
-// Add this at the end of your main.js file
-document.getElementById('link-distance').addEventListener('input', loadData);
+document.getElementById('link-distance').addEventListener('change', loadData);
