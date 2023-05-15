@@ -33,9 +33,9 @@ function createGraph(data, linkDistance) {
   });
 
   node.call(d3.drag()
-    .on("start", dragstart)
+    .on("start", d => dragstart(d, simulation))
     .on("drag", dragged)
-    .on("end", dragend));
+    .on("end", d => dragend(d, simulation)));
 }
 
 function updateGraph(link, node, label, linkLabel) {
@@ -106,8 +106,8 @@ function createSimulation(data, linkDistance, width, height) {
 }
 
 // drag-related functions
-function dragstart(event) {
-  if (!event.active) this.alphaTarget(0.3).restart();
+function dragstart(event, simulation) {
+  if (!event.active) simulation.alphaTarget(0.3).restart();
   event.subject.fx = event.subject.x;
   event.subject.fy = event.subject.y;
 }
@@ -117,8 +117,8 @@ function dragged(event) {
   event.subject.fy = event.y;
 }
 
-function dragend(event) {
-  if (!event.active) this.alphaTarget(0);
+function dragend(event, simulation) {
+  if (!event.active) simulation.alphaTarget(0);
   event.subject.fx = null;
   event.subject.fy = null;
 }
